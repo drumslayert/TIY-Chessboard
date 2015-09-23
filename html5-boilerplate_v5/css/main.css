@@ -6,9 +6,28 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+/* ==========================================================================*/
+
+body {
+  margin-top: 100px;
+  border: 2px solid blue;
+}
+
+table {
+    width: 100%;
+    border: 1px;
+  margin: 0 auto;
+    }
+section {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 40px;
+}
+
+
+
+/*   ========================================================================== */
 
 html {
     color: #222;

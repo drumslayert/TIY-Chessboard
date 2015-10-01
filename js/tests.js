@@ -1,5 +1,5 @@
-alert('test');
-function(globals){
+(function(globals){
+
 
   it('should have a `game` in the `window`', function(){
     chai.expect(window.game).to.be.equal(game);
@@ -19,21 +19,37 @@ function(globals){
     chai.expect(board[0][0]).to.equal('R');
   }); // END it should be a big Array
 
-  it('should be able to move pieces', function(){
-    // board[0][0] = board[0][1];
-    game.applyMove(
-      // TODO: one day take { file: 'd', rank: 2 },
-      { rank: 6, file: 3 }, // from
-      // TODO: one day take { file: 'd', rank: 4 }
-      { rank: 4, file: 3 } // to
-    );
+  // it('should be able to move pieces', function(){
+  //   // board[0][0] = board[0][1];
+  //   game.reset(); //re-initialize board
+  //   var board = game.board();
+  //
+  //   chai.expect(board[6][3]).to.be.equal('p');
+  //   chai.expect(board[4][3]).to.be.null;
+  //
+  //   chai.expect(game.applyMove(
+  //     // TODO: one day take { file: 'd', rank: 2 },
+  //     { rank: 6, file: 3 }, // from
+  //     // TODO: one day take { file: 'd', rank: 4 }
+  //     { rank: 4, file: 3 } // to
+  //   ));
+  //
+  //   var board = game.board();
+  //
+  //   chai.expect(board[6][3]).to.be.null;
+  //   chai.expect(board[4][3]).to.be.equal('p');
+  // });
+  //
+  // it('should be able to move another piece')
+  //   game.reset();
+  //   var board = game.board();
+  //   chai.expect(board [][]).to.be.equal('');
+  //   chai.expect(board [][]).to.be.null;
+  //
+  //
+  // });
 
-    var board = game.board();
-
-    chai.expect(board[6][3]).to.be.equal(null);
-    chai.expect(board[4][3]).to.be.equal('p');
-
-  });
+  
 
   it.skip('should be able to advance to the next move', function(){
     // TODO: Maybe I should write some tests for this?

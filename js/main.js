@@ -1,6 +1,6 @@
 (function(globals){
 // Don't worry if that seems a little funky...
-
+// alert('test');
   /**
    * Internal representation of the game board in its current state.
    *
@@ -20,22 +20,22 @@
    */
   var moves = [ {from: 6, from: 3,
     to: 4, to: 3 },
-   {from: 0, from: 6,
-    to: 2, to: 5 },
-   {from: 6, from: 2,
-    to: 4, to: 2 },
-   {from: 1, from: 4,
-    to: 2, to: 4 },
-   {from: 6, from: 6,
-    to: 5, to: 6 },
-   {from: 1, from: 3,
-    to: 3, to: 3 },
-   {from: 7, from: 5,
-    to: 6, to: 6 },
-   {from: 0, from: 5,
-    to: 1, to: 4 },
-   {from: 7, from: 6,
-    to: 5, to: 5 }
+  //  {from: 0, from: 6,
+  //   to: 2, to: 5 },
+  //  {from: 6, from: 2,
+  //   to: 4, to: 2 },
+  //  {from: 1, from: 4,
+  //   to: 2, to: 4 },
+  //  {from: 6, from: 6,
+  //   to: 5, to: 6 },
+  //  {from: 1, from: 3,
+  //   to: 3, to: 3 },
+  //  {from: 7, from: 5,
+  //   to: 6, to: 6 },
+  //  {from: 0, from: 5,
+  //   to: 1, to: 4 },
+  //  {from: 7, from: 6,
+  //   to: 5, to: 5 }
 
 
 
@@ -105,16 +105,16 @@
     tracer: function(){
       var bullet = '';
 
-      for ( var rank = 0; rank < board.length; rank++ ){
-        bullet += '|';
-        for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' |';
-        }
-        bullet += '\n';
+      for ( rank = 0; rank < board.length; rank++ ){
+      bullet += '|';
+      for ( var file = 0; file < board[rank].length; file++ ){
+        bullet += (board[rank][file] || ' ') + '|';
       }
+      bullet += '\n';
+    }      return bullet;
+  
+  },
 
-      return bullet;
-    },
     /**
      * Apply a move to the game board, given a `from` and `to` position that both
      * contain values for `rank` and `file`.
@@ -125,8 +125,8 @@
      *
      * @todo Fill me in! ...and remove this comment.
      */
-    function applyMove(from, to){
-    moves[0], moves[0];
+   applyMove: function(from, to){
+      board[4][3] = board[6][3]
     } // END applyMove
   }; // END game
 

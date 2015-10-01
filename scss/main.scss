@@ -1,0 +1,61 @@
+
+.top-row {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 50px;
+
+ td {
+    width:50px;
+    line-height: 50px;
+    font-weight: 700;
+    text-shadow: 0 2px 0 silver;
+    text-align: center;
+    font-size: 16pt;
+    border: none;
+    background: silver;
+  }
+}
+    #empty {
+      background: silver;
+      border: none;
+    }
+
+
+#rank {
+  background: white;
+  border:none;
+  color: #000000;
+  font-size: 17pt;
+  font-weight: 700;
+  text-shadow: 0 2px 0 silver;
+  background: silver;
+/*  vertical-align: middle; */
+}
+
+
+.chessboard {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+  td {
+    width:50px;
+    height:50px;
+    border:1px silver solid;
+    text-align:center;
+    font-size:40px;
+  }
+
+.chessboard tr:nth-child(odd) td:nth-child(even) {
+  background: #000;
+  color: #ffffff;
+}
+.chessboard tr:nth-child(even) td:nth-child(odd) {
+  background: #000;
+  color: #ffffff;
+}
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}

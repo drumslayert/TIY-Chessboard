@@ -1,61 +1,177 @@
 
-.top-row {
+.container {
+  margin:0 18%;
+  margin-top: 30px;
+  border:15px solid #5E9FB5;
+  border-radius: 8px;
+  box-shadow:
+  0 0 0 10px hsl(0, 0%, 80%),
+  0 0 0 15px hsl(0, 0%, 90%);
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 50px;
-
- td {
-    width:50px;
-    line-height: 50px;
-    font-weight: 700;
-    text-shadow: 0 2px 0 silver;
-    text-align: center;
-    font-size: 16pt;
-    border: none;
-    background: silver;
-  }
+  background: #fff;
 }
-    #empty {
-      background: silver;
-      border: none;
-    }
+header {
+  width: 90%;
+  margin: 0 5%;
+  text-align: center;
+
+}
+body {
+    background: #fff;
+    height:600px;
+    padding:100px;
+}
+#borderoutside {
+  padding: 30px 30px 60px 30px;
+  // border: 35px solid grey;
+  border-radius: 8px;
+  background: #767676;
+
+}
+.top-row {
+  font-weight: 700;
+  margin-top: 50px;
+  text-align: center;
+  color: #000000;
+  font-size: 15pt;
+  font-weight: 700;
+  text-shadow: 0 2px 0 silver;
+}
+
+#empty {
+  background: #C2CBCF;
+  border: none;
+  background: #fff;
+}
 
 
 #rank {
-  background: white;
+  background: #fff;
   border:none;
   color: #000000;
   font-size: 17pt;
   font-weight: 700;
   text-shadow: 0 2px 0 silver;
-  background: silver;
+  text-align: right;
+  padding-right: 8px;
+
 /*  vertical-align: middle; */
 }
 
 
 .chessboard {
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  width:100%;
 }
-  td {
+
+tbody td {
     width:50px;
     height:50px;
-    border:1px silver solid;
+    border: 5px solid #767676;
     text-align:center;
-    font-size:40px;
-  }
-
-.chessboard tr:nth-child(odd) td:nth-child(even) {
-  background: #000;
-  color: #ffffff;
+    font-size:14pt;
+    position: relative;
+    padding-right: 20px;
 }
-.chessboard tr:nth-child(even) td:nth-child(odd) {
-  background: #000;
-  color: #ffffff;
+
+.R::before {
+ content: "\265C";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em; // But totally not relative!
+ text-align: center;
+}
+.Q::before {
+ content: "\265B";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.B::before {
+ content: "\265D";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.K::before {
+ content: "\265A";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.N::before{
+  content: "\265E";
+  position: absolute;
+  top:0; right:0; bottom:0; left:0;
+  font-size: 1.5em;
+  text-align: center;
+}
+.P::before {
+ content: "\265F";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.r::before {
+ content: "\2656";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.b::before {
+ content: "\2657";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.k::before {
+ content: "\2654";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.n::before {
+ content: "\2658";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.q::before {
+ content: "\2655";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+.p::before {
+ content: "\2659";
+ position: absolute;
+ top:0; right:0; bottom:0; left:0;
+ font-size: 1.5em;
+ text-align: center;
+}
+
+tbody tr:nth-child(odd) td:nth-child(even) {
+  background: #5E9FB5;
+  // color: ;
+}
+tbody tr:nth-child(even) td:nth-child(odd) {
+  background: #5E9FB5;
+  // color: ;
 }
 .controls {
   text-align: center;
   margin-top: 20px;
+  margin-left: 50px;
+
 }

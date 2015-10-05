@@ -1,0 +1,24 @@
+{
+  "name": "tiy-chessboard",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "mocha",
+    "sass": "node-sass --output-style expanded scss/*.scss css/*.css",
+    "bs": "browser-sync start --server --startPath 'index.html' --files='index.html, js/*.js, css/*.css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drumslayert/TIY-Chessboard.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drumslayert/TIY-Chessboard/issues"
+  },
+  "homepage": "https://github.com/drumslayert/TIY-Chessboard#readme"
+}

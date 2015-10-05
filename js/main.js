@@ -9,52 +9,59 @@
    * @see initial
    * @var {Array} of {Array} of {String|null}
    */
+
+
+   // My function to get the pieces from my html table
+   function placeAPiece(x,y,piece) {
+                                            //element.setAttribute(attributename,attributevalue)
+   document.getElementById("chessboard").rows[x].cells[y].setAttribute("class", piece);
+   }
+//http://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript
+
+
   var board = initial(); // initialize the `board`
 
   /**
    * List of moves for the "Catalan Opening: Closed Variation" suitable for use
    * as arguments to `applyMove` below.
-   *
-   * @see applyMove
+    * @see applyMove
    * @var {Array} of...?
    */
-  var moves = [ {from: 6, from: 3,
-    to: 4, to: 3 },
-  //  {from: 0, from: 6,
-  //   to: 2, to: 5 },
-  //  {from: 6, from: 2,
-  //   to: 4, to: 2 },
-  //  {from: 1, from: 4,
-  //   to: 2, to: 4 },
-  //  {from: 6, from: 6,
-  //   to: 5, to: 6 },
-  //  {from: 1, from: 3,
-  //   to: 3, to: 3 },
-  //  {from: 7, from: 5,
-  //   to: 6, to: 6 },
-  //  {from: 0, from: 5,
-  //   to: 1, to: 4 },
-  //  {from: 7, from: 6,
-  //   to: 5, to: 5 }
-
-
-
-    // TODO: Fill me in!     //object that contains rank and file
-  ]; // END moves
+   var moves =
+   [               // the first nine moves
+     [ [6,3],[4,3] ],
+     [ [0,6],[2,5] ],
+     [ [6,2],[4,2] ],
+     [ [1,4],[2,4] ],
+     [ [6,6],[5,6] ],
+     [ [1,3],[3,3] ],
+     [ [7,5],[6,6] ],
+     [ [0,5],[1,4] ],
+     [ [7,6],[5,5] ],
+   ] // END moves
 
   // var current; TODO: do we need this?
 
   // You don't need to understand `globals` yet...
   var game = globals.game = {
-    /**
+    /*
      * Provide a _copy_ of the game board in order to update the View from it
      *
      * @return {Array} of {Array} of {String|null}
      */
-    board: function(){
+  board: function(){
+    for (x=0; x < 8; x++){ // iterate through
+      for (y=0; y < 8; y++){
+        var mypiece = board[x][y];
+        placeAPiece(x+1,y+1,mypiece);//take every position in the array and
+    }}                              // add whatever I attached to it on the board
+
+      console.log("CurrentMove: " + currentMove);
+      console.log("board in main")
       return board.map(function(row){
         return row.slice();
       });
+
     },
     /**
      * Reset the internal game board to it's initial state.
@@ -63,7 +70,7 @@
      */
     reset: function(){
       board = initial();
-
+      currentMove = 0;
       return this;
     },
     /**
@@ -73,8 +80,15 @@
      * @todo Make this work!
      */
     next: function(){
-      // Doesn't this seem to be missing something?
-      return this;
+      console.log ("next from main.js");
+      fromValue = moves[currentMove][0]; //the zero indicates FROM
+      toValue = moves[currentMove][1]; // the one indicates TO
+      // myPiece - the zero indicates the x axis of the game board. the 1 indicates the y axis
+      myPiece = board[fromValue[0]][fromValue[1]];
+      board[toValue[0]][toValue[1]] = myPiece;
+      board[fromValue[0]][fromValue[1]] = null;
+      currentMove++;                    //this is stepping through each move from
+      return this;                      // my moves and applying it 
     },
     /**
      * Advance the internal game board to the previous move.
@@ -83,7 +97,18 @@
      * @todo Make this work!
      */
     prev: function(){
-      // Another good place for code...
+      if (currentMove===0) {
+        return this;
+      }
+      console.log ("prev from main.js");
+      currentMove--;
+      fromValue = moves[currentMove][0]; //the zero indicates FROM
+      toValue = moves[currentMove][1]; // the one indicates TO
+      // the zero indicates the x axis of the game board. the 1 indicates the y axis
+      myPiece = board[toValue[0]][toValue[1]];
+      board[fromValue[0]][fromValue[1]] = myPiece;
+      board[toValue[0]][toValue[1]] = null;
+      //currentMove--;
       return this;
     },
     /**
@@ -112,7 +137,7 @@
       }
       bullet += '\n';
     }      return bullet;
-  
+
   },
 
     /**
@@ -136,6 +161,7 @@
    * @return {Array} of {Array} of {String|null}
    */
   function initial(){
+    currentMove = 0;
     return [
       [ 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' ],
       [ 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' ],

@@ -15,6 +15,7 @@
    function placeAPiece(x,y,piece) {
                                             //element.setAttribute(attributename,attributevalue)
    document.getElementById("chessboard").rows[x].cells[y].setAttribute("class", piece);
+  //  jQuery('#chessboard').find('tr').eq(x).find('td').eq(y).addClass(piece);
    }
 //http://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript
 
@@ -54,7 +55,7 @@
       for (y=0; y < 8; y++){
         var mypiece = board[x][y];
         placeAPiece(x+1,y+1,mypiece);//take every position in the array and
-    }}                              // add whatever I attached to it on the board
+    }}                              // add whatever I css class I attached to it on the board
 
       console.log("CurrentMove: " + currentMove);
       console.log("board in main")
@@ -88,7 +89,7 @@
       board[toValue[0]][toValue[1]] = myPiece;
       board[fromValue[0]][fromValue[1]] = null;
       currentMove++;                    //this is stepping through each move from
-      return this;                      // my moves and applying it 
+      return this;                      // my moves and applying it
     },
     /**
      * Advance the internal game board to the previous move.
